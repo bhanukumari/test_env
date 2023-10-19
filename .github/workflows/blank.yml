@@ -29,6 +29,7 @@ jobs:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           cred_id: ${{ secrets.CREDENTIALS_ID }}
         run: |
+          chmod +x test.sh
           ./test.sh
         
       - uses: actions/upload-artifact@v3
