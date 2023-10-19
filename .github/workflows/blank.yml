@@ -30,7 +30,7 @@ jobs:
           cred_id: ${{ secrets.CREDENTIALS_ID }}
         run: |
           echo ${GITHUB_WORKSPACE}
-          bash ${GITHUB_WORKSPACE}/test_env/test.sh
+          bash ${GITHUB_WORKSPACE}/test.sh
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
