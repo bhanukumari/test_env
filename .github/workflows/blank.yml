@@ -31,9 +31,8 @@ jobs:
         run: |
           pwd
           ls
-          echo " Username : ${DB_USERNAME}" >> "test.txt"
-          echo "Hostname: ${DB_HOSTNAME}" >> "test.txt"
-          echo "cred_id: ${cred_id}" >> "test.txt"
+          chmod +x /home/runner/work/test_env/test_env/test.sh
+          /home/runner/work/test_env/test_env/test.sh
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
