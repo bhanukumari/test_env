@@ -29,9 +29,11 @@ jobs:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           cred_id: ${{ secrets.CREDENTIALS_ID }}
         run: |
-         echo " Username : ${DB_USERNAME}" >> "test.txt"
-         echo "Hostname: ${DB_HOSTNAME}" >> "test.txt"
-         echo "cred_id: ${cred_id}" >> "test.txt"
+          pwd
+          ls
+          echo " Username : ${DB_USERNAME}" >> "test.txt"
+          echo "Hostname: ${DB_HOSTNAME}" >> "test.txt"
+          echo "cred_id: ${cred_id}" >> "test.txt"
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
