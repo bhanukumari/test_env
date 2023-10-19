@@ -28,5 +28,7 @@ jobs:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           cred_id: ${{ secrets.CREDENTIALS_ID }}
-        run: echo ${DB_USERNAME}
+        run: |
+          echo ${DB_USERNAME} >> test.txt
+          cat test.txt
       
