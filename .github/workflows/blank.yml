@@ -31,8 +31,8 @@ jobs:
         run: |
           pwd
           ls
-          chmod +x /home/runner/work/test_env/test_env/test.sh
-          /home/runner/work/test_env/test_env/test.sh
+          chmod +x test.sh
+          test.sh
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
