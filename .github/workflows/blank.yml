@@ -29,10 +29,8 @@ jobs:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           cred_id: ${{ secrets.CREDENTIALS_ID }}
         run: |
-          pwd
-          ls
-          chmod +x test.sh
-          ./test.sh
+          echo ${GITHUB_WORKSPACE}
+          bash ${GITHUB_WORKSPACE}/test_env/test.sh
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
