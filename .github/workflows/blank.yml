@@ -32,7 +32,7 @@ jobs:
           pwd
           ls
           chmod +x test.sh
-          test.sh
+          ./test.sh
         
       - uses: actions/upload-artifact@v3
         name: Upload Artifact
