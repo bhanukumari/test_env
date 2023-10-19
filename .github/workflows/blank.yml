@@ -29,6 +29,10 @@ jobs:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           cred_id: ${{ secrets.CREDENTIALS_ID }}
         run: |
-          echo ${DB_USERNAME} >> test.txt
-          cat test.txt
-      
+          echo "${DB_USERNAME}" >> "test.txt"
+        
+      - uses: actions/upload-artifact@v3
+        name: Upload Artifact
+        with:
+          name: SecretsVariables
+          path: "test.txt"
