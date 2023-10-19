@@ -4,10 +4,19 @@ name: CI
 on:
   push:
   workflow_dispatch:
-
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+      
+        options:
+        - LMDA
+        - LMDB
+        
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
   
     steps:
      
@@ -15,8 +24,5 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo {{ secrets.DB_HOSTNAME }}
+      
